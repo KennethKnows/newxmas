@@ -1,0 +1,174 @@
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  position: relative;  /* Ensure snowflakes stay behind content */
+  overflow: hidden;    /* Prevent snowflakes from being cut off */
+}
+
+/* Floating snowflakes container */
+.floating-snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allow interaction with other elements */
+}
+
+/* Snowflake styling */
+.snowflake {
+  position: absolute;
+  top: -10px;  /* Start slightly above the screen */
+  background-color: rgba(255, 255, 255, 0.8); /* Light white snowflakes */
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+/* Snowfall animation */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);  /* Snowflakes fall to the bottom */
+  }
+}
+
+/* Countdown Timer Styling */
+.countdown-container {
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#countdown-timer {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffdd57;
+}
+
+/* Carousel container style */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 1; /* Ensure carousel is above floating snowflakes */
+}
+
+/* Carousel itself, making it scroll horizontally */
+.carousel {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  width: 100%;
+}
+
+/* Each individual slide in the carousel */
+.carousel-slide {
+  flex-shrink: 0;
+  min-width: 100%;
+  text-align: center;
+  font-size: 3.5rem;
+  padding: 30px;
+  background-color: #ffdd57;
+  color: #333;
+  font-weight: bold;
+  height: 100%;
+  box-sizing: border-box;
+}
+.carousel-slides {
+  flex-shrink: 0;
+  min-width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 30px;
+  background-color: #ffdd57;
+  color: #333;
+  font-weight: bold;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+/* Styling for odd-numbered slides */
+.carousel-slide:nth-child(odd) {
+  background-color: #ff6347;  /* Tomato color */
+}
+
+/* Styling for even-numbered slides */
+.carousel-slide:nth-child(even) {
+  background-color: #ff9900;  /* Orange color */
+}
+
+/* Date and time styling */
+.date-time {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: normal;
+}
+
+.credits {
+  position: absolute;
+  bottom: 25px;    /* 10px from the bottom of the page */
+  right: 50px;     /* 10px from the right of the page */
+  font-size: 1.5rem;
+  color: #ffdd57;  /* Golden color */
+  font-weight: bolder;
+  font-family:cursive;
+}
+.spon {
+  position: absolute;
+  right: 50px;     /* 10px from the right of the page */
+  font-size: 15px;
+  bottom: 5px;
+}
+
+/* Center the reminder container at the top */
+.reminder-container {
+  position: fixed; /* Fixed at the top of the page */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centers the container horizontally */
+  /* background-color: #f8d7da; */
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: red; /* Red text color */
+  font-size: 24px;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  white-space: nowrap; /* Prevent wrapping of text */
+  overflow: hidden; /* Hide text outside the container */
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start off the right side */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left side */
+  }
+}
+
+.reminder-container{
+  display: inline-block;
+  animation: marquee 10s linear infinite; /* Continuous marquee effect */
+}

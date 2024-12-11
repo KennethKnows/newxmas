@@ -140,7 +140,12 @@ body {
   font-size: 15px;
   bottom: 5px;
 }
-
+.spon1 {
+  position: absolute;
+  left: 50px;     /* 10px from the right of the page */
+  font-size: 15px;
+  bottom: 5px;
+}
 /* Center the reminder container at the top */
 .reminder-container {
   position: fixed; /* Fixed at the top of the page */

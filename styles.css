@@ -92,19 +92,6 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
-.carousel-slides {
-  flex-shrink: 0;
-  min-width: 100%;
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 30px;
-  background-color: #ffdd57;
-  color: #333;
-  font-weight: bold;
-  height: 100%;
-  box-sizing: border-box;
-}
-
 
 /* Styling for odd-numbered slides */
 .carousel-slide:nth-child(odd) {
@@ -127,37 +114,46 @@ body {
 
 .credits {
   position: absolute;
-  bottom: 25px;    /* 10px from the bottom of the page */
+  bottom: 35px;    /* 10px from the bottom of the page */
   right: 50px;     /* 10px from the right of the page */
   font-size: 1.5rem;
   color: #ffdd57;  /* Golden color */
   font-weight: bolder;
   font-family:cursive;
 }
+
 .spon {
   position: absolute;
   right: 50px;     /* 10px from the right of the page */
   font-size: 15px;
-  bottom: 5px;
+  bottom: 25px;
 }
-.spon1 {
+.guide-container {
   position: absolute;
   left: 50px;     /* 10px from the right of the page */
   font-size: 15px;
   bottom: 5px;
 }
+
+/* .spon1 {
+  position: absolute;
+  left: 50px;    
+  font-size: 15px;
+  bottom: 5px;
+} */
+
 /* Center the reminder container at the top */
 .reminder-container {
   position: fixed; /* Fixed at the top of the page */
   top: 0;
   left: 50%;
   transform: translateX(-50%); /* Centers the container horizontally */
-  /* background-color: #f8d7da; */
   padding: 10px 20px;
   border-radius: 8px;
   text-align: center;
-  color: red; /* Red text color */
-  font-size: 24px;
+  text-shadow: 0 2px 3px red;
+  color: whitesmoke; /* Red text color */
+  font-size: 18px;
   z-index: 1000; /* Ensure it stays on top of other elements */
   white-space: nowrap; /* Prevent wrapping of text */
   overflow: hidden; /* Hide text outside the container */
@@ -172,8 +168,103 @@ body {
     transform: translateX(-100%); /* Move to the left side */
   }
 }
-
-.reminder-container{
+.reminder-container h2 {
+  text-align: justify;
+  line-height: 1.6; 
+}
+.reminder-container {
   display: inline-block;
-  animation: marquee 10s linear infinite; /* Continuous marquee effect */
+  animation: marquee 25s linear infinite; /* Continuous marquee effect */
+}
+
+/* Responsive design - Media Queries */
+
+/* For devices up to 768px (tablets and small screens) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;  /* Adjust font size for smaller screens */
+  }
+
+  .countdown-container {
+    font-size: 1.5rem; /* Smaller countdown timer */
+    padding: 15px;
+  }
+
+  #countdown-timer {
+    font-size: 2rem;
+  }
+
+  .carousel-slide {
+    font-size: 2.5rem; /* Adjust text size for carousel */
+    padding: 20px;
+  }
+
+  .credits {
+    font-size: 1.2rem;
+  }
+
+  .guide-container {
+    font-size: 12px;
+  }
+  .spon {
+    font-size: 12px;
+  }
+
+  .reminder-container {
+    font-size: 18px;  /* Smaller text for reminder */
+  }
+
+  .carousel-container {
+    max-width: 90%; /* Limit carousel width */
+  }
+
+  .date-time {
+    font-size: 1.2rem;  /* Smaller date/time font */
+  }
+}
+
+/* For devices up to 480px (mobile screens) */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;  /* Further reduce font size for small mobile screens */
+  }
+
+  .countdown-container {
+    font-size: 1.2rem;  /* Further smaller countdown font */
+    padding: 10px;
+  }
+
+  #countdown-timer {
+    font-size: 1.8rem;
+  }
+
+  .carousel-slide {
+    font-size: 1rem;  /* Further reduce carousel slide text */
+    padding: 15px;
+  }
+
+  .credits {
+    font-size: 1rem;
+    bottom: 50px;
+  }
+
+  .guide-container {
+    font-size: 12px;
+  }
+  .spon {
+    font-size: 10px;
+    bottom: 40px;
+  }
+
+  .reminder-container {
+    font-size: 10px;  /* Smaller text for mobile */
+  }
+
+  .carousel-container {
+    max-width: 95%;  /* Max width for carousel */
+  }
+
+  .date-time {
+    font-size: 1rem;  /* Smaller date/time font for mobile */
+  }
 }
